@@ -1,3 +1,23 @@
 .App {
   text-align: center;
 }
+
+.Navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 1rem; 
+  margin-right: 1rem;
+}
+
+.links{
+  display: flex; 
+  justify-content: flex-end;
+  gap: 2rem; 
+}
+
+img{
+  height: 150px;
+  width: auto;
+}

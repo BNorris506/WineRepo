@@ -6,16 +6,16 @@ import { getAllWines } from '../api/auth';
 const Wines = ({setSelectedWine}) => {
     const [wines, setWines] = useState([]);
 
-useEffect(()=> {
-    const winesArr = async () => {
-        const allWines = await getAllWines();
-        console.log("heres all the wines", allWines)
-        setWines(allWines);
-    }
-        winesArr();
-        console.log("here's the wines after set", wines)
-    }, [])
-
+    console.log("here are the wines", wines)
+    useEffect(()=> {
+        const winesArr = async () => {
+            const allWines = await getAllWines();
+            console.log("heres all the wines", allWines)
+            setWines(allWines);
+        }
+            winesArr();
+            console.log("here's the wines after set", wines)
+        }, [])
 // const handleClick = async (wineId) => {
 //         const singleWine = await getWineById(wineId)
 //         // const singleReview = await getReviewsByWineId(wineId)
@@ -26,7 +26,6 @@ useEffect(()=> {
     return (
         <div>
             <h1>Here are all the wines</h1>
-            <h2>Are you listening to me???</h2>
              {wines.map((wine) => (
                 <div key={wine.id}>
                     <img src={wine.url} alt="Wine Bottle" />
@@ -35,6 +34,7 @@ useEffect(()=> {
                     <p>Description: {wine.description}</p>
                     <p>Price: {wine.price}</p>
                     {/* <button onClick={() => handleClick(wine.id)}>View Wine</button> */}
+                    <br></br>
                 </div>
             ))}
         </div>
